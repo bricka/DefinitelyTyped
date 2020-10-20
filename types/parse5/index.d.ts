@@ -81,4 +81,8 @@ export function parse(html: string, options?: ParserOptions): Document;
 export function parseFragment(html: string, options?: ParserOptions): DocumentFragment;
 export function parseFragment(fragmentContext: Element, html: string, options?: ParserOptions): DocumentFragment;
 
+interface SerializerOptions {
+    treeAdapter?: TreeAdapter;
+}
+
 export function serialize(node: Node, options?: SerializerOptions): string;
