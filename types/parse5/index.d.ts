@@ -7,14 +7,6 @@
 
 type DocumentMode = "no-quirks" | "quirks" | "limited-quirks";
 
-export interface Document {
-    
-}
-
-export interface DocumentFragment {
-    
-}
-
 interface Location {
     endCol: number;
     endOffset: number;
@@ -32,6 +24,13 @@ interface ElementLocation extends Location {
 
 interface StartTagLocation extends Location {
     attrs: { [attributeName: string]: Location };
+}
+
+interface EndLocation {
+    endCol: number;
+    endOffset: number;
+    endLine: number;
+    endTag: Location;
 }
 
 interface TreeAdapter {
