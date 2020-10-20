@@ -33,6 +33,32 @@ interface EndLocation {
     endTag: Location;
 }
 
+interface Attribute {
+    name: string;
+    namespace?: string;
+    prefix?: string;
+    value: string;
+}
+
+interface DocumentFragment {
+    childNodes: Node[]; 
+    nodeName: '#document-fragment';
+}
+
+interface CommentNode {
+    data: string;
+    nodeName: '#comment';
+    parentNode: Node;
+    sourceCodeLocation?: Location;
+}
+
+interface TextNode {
+    nodeName: '#text';
+    parentNode: Node;
+    sourceCodeLocation?: Location;
+    value: string;
+}
+
 interface TreeAdapter {
     adoptAttributes(recipient: Element, attrs: Attribute[]): void;
     appendChild(parentNode: Node, newNode: Node): void;
